@@ -1,6 +1,6 @@
 import unittest
 
-from generate_parentheses.solution import Solution
+from generate_parenthesis.solution import Solution
 
 
 class SolutionTest(unittest.TestCase):

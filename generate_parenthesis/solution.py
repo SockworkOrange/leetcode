@@ -16,16 +16,16 @@ class Solution:
             if i >= n:
                 continue
             should_expand = True
-            strs.update({
+            strs = strs | {
                 s + s2: i + strs[s2]
                 for s2 in strs_k
                 if i + strs[s2] <= n
-            })
-            strs.update({
+            }
+            strs = strs | {
                 s2 + s: i + strs[s2]
                 for s2 in strs_k
                 if i + strs[s2] <= n
-            })
+            }
             strs["(" + s + ")"] = i + 1
         if should_expand:
             return self.expand_permutations(strs, depth+1, n)
