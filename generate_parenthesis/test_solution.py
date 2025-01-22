@@ -7,14 +7,14 @@ class SolutionTest(unittest.TestCase):
     sln = Solution()
 
     def test_generate_parentheses(self):
-        assert self.sln.generate_parenthesis(1) == ["()"]
-        assert self.sln.generate_parenthesis(2) == ["(())", "()()"]
-        assert self.sln.generate_parenthesis(3) == ["((()))", "(()())", "(())()", "()(())", "()()()"]
-        assert self.sln.generate_parenthesis(4) == [
+        assert self.sln.generate_parenthesis(1) == ["()"] # 1 => 1, 2^0=1
+        assert self.sln.generate_parenthesis(2) == ["(())", "()()"] # 2 => 2, 2^1=2
+        assert self.sln.generate_parenthesis(3) == ["((()))", "(()())", "(())()", "()(())", "()()()"] # 3 => 5, 2^2+2^0=5
+        assert self.sln.generate_parenthesis(4) == [ # 4 => 14, 2^3=8 2^2=4, 2^1=2, 8+4+2=14
             "(((())))", "((()()))", "((())())", "((()))()", "(()(()))", "(()()())", "(()())()",
             "(())(())", "(())()()", "()((()))", "()(()())", "()(())()", "()()(())", "()()()()"
         ]
-        assert self.sln.generate_parenthesis(5) == [
+        assert self.sln.generate_parenthesis(5) == [ # 5 => 42, 2^5=32, 2^3=8, 2^1=2
             "((((()))))","(((()())))","(((())()))","(((()))())","(((())))()","((()(())))","((()()()))",
             "((()())())","((()()))()","((())(()))","((())()())","((())())()","((()))(())","((()))()()",
             "(()((())))","(()(()()))","(()(())())","(()(()))()","(()()(()))","(()()()())","(()()())()",

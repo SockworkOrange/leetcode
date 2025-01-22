@@ -14,10 +14,13 @@ class Solution:
 
         # 1. valid ip range, but still more digits to process => no ip permutations to add
         # 2. not a valid ip range, and no digits left to make it valid => no ip permutations to add
-        if all_ip_octets_exist or no_remaining_digits:
-            return []
-
         result = []
+        if all_ip_octets_exist or no_remaining_digits:
+            return result
+
+        max_remaining_s = (4 - len(ip_range_octets)) * 3
+        if len(remaining_s) > max_remaining_s:
+            return []
 
         octet_1 = int(remaining_s[:1])
         if 0 <= octet_1 <= 255:
