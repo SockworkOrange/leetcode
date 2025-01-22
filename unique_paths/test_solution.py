@@ -2,11 +2,6 @@ import unittest
 
 from unique_paths.solution import Solution
 
-# $ $ $
-# $ $ $
-# $ $ $
-
-######
 
 class SolutionTest(unittest.TestCase):
     sln = Solution()
